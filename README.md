@@ -1,2 +1,2 @@
 # Hypergraph_RD
-Python package for Hypergraph Computation
+Python package for Random and Dynamical Hypergraph Computation
