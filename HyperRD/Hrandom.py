@@ -6,10 +6,12 @@ Created on Sat Jul 22 08:45:25 2023
 """
 
 import numpy as np
+import random
+import itertools 
 from HyperRD.Hgraph import *
 
 def simple_matrix(n: int, m: int, p: float) -> object:
-    '''return a random hypergraph base on the generation of random incidence matrix'''
+    '''return a random hypergraph based on the generation of random incidence matrix'''
     random_matrix = np.zeros((n, m))
     for i in range(n):
         for j in range(m):
@@ -28,19 +30,34 @@ def simple_matrix(n: int, m: int, p: float) -> object:
     return graph
 
 def simple_bipartite(n: int, m: int, interation: int, p: float) -> object:
-    '''return a random hypergraph base on the generation of bipartite graph'''
+    '''return a random hypergraph based on the generation of bipartite graph'''
     edges = [set()]*m
     for k in range(interation):
+        edge_index = random.choice(range(m))
+        edge = edges[edge_index].copy()
         for i in range(n):
-            edge_index = random.choice(range(m))
-            edge = edges[edge_index].copy()
             if np.random.randint(1000, size=1)/1000 < p:
                 edge.add(i)
-                edges[edge_index] = edge
+        edges[edge_index] = edge
     graph = Create()
     graph.vertices = set(range(n))
     graph.vertices_dict = graph.dict_of_vertices()
     for j in range(m):
         graph.add_edge(edges[j])
+    graph.inci_matrix = graph.incidence_matrix()
+    return graph
+
+def k_uniform(n: int, k: int, p: float) -> object:
+    '''return a k-uniform random hypergraph'''
+    edges = []
+    edges_possible = [i for i in itertools.combinations(range(n), k)]
+    for edge in edges_possible:
+        if np.random.randint(1000, size=1)/1000 < p:
+            edges.append(edge)
+    graph = Create()
+    graph.vertices = set(range(n))
+    graph.vertices_dict = graph.dict_of_vertices()
+    for edge in edges:
+        graph.add_edge(edge)
     graph.inci_matrix = graph.incidence_matrix()
     return graph

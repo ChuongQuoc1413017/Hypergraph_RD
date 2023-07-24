@@ -26,12 +26,13 @@ class Create(object):
         
     def add_edge(self: object, edge: list) -> None:
         '''add edge'''
-        edge = frozenset(edge)
-        (self.edges).add(edge)
-        for vertex in edge:
-            (self.vertices).add(vertex)
-        self.vertices_dict = self.dict_of_vertices()
-        self.edges_dict = self.dict_of_edges()
+        if set(edge) != set():
+            edge = frozenset(edge)
+            (self.edges).add(edge)
+            for vertex in edge:
+                (self.vertices).add(vertex)
+            self.vertices_dict = self.dict_of_vertices()
+            self.edges_dict = self.dict_of_edges()
     
     def add_vertex(self: object, vertex: object) -> None:
         '''add vertex'''
