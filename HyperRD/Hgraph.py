@@ -9,6 +9,7 @@ import numpy as np
 
 class Create(object):
     
+    # init function to declare class variables
     def __init__(self):
         
         # For vertices
@@ -110,3 +111,48 @@ class Create(object):
         '''remove edge from graph'''
         (self.edges).remove(frozenset(edge))
         self.edges_dict = self.dict_of_edges()
+        
+class Create_Normal(object):
+ 
+    # init function to declare class variables
+    def __init__(self, vertices):
+        
+        # represent graph as adjacency list
+        self.vertices = vertices
+        self.adj = [[] for i in range(vertices)]
+ 
+    def DFS_Utility(self: object, temp: list, vertex: int, visited: list) -> list:
+        '''Depth-first search algorithm'''
+        # Mark the current vertex as visited
+        visited[vertex] = True
+ 
+        # Store the vertex to list
+        temp.append(vertex)
+ 
+        # Repeat for all vertices adjacent
+        # to this vertex v
+        for i in self.adj[vertex]:
+            if visited[i] == False:
+ 
+                # Update the list
+                temp = self.DFS_Utility(temp, i, visited)
+        return temp
+
+    def addEdge(self: object, start: int, end: int) -> None:
+        '''add edge'''
+        self.adj[start].append(end)
+        self.adj[end].append(start)
+ 
+    # Method to retrieve connected components
+    # in an undirected graph
+    def connected_components(self: object) -> list:
+        '''return list of connected components'''
+        visited = []
+        components = []
+        for i in range(self.vertices):
+            visited.append(False)
+        for vertex in range(self.vertices):
+            if visited[vertex] == False:
+                temp = []
+                components.append(self.DFS_Utility(temp, vertex, visited))
+        return components
