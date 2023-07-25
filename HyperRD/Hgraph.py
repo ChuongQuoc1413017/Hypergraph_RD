@@ -25,6 +25,11 @@ class Create(object):
         # For representation
         self.inci_matrix = None
         
+    def add_vertex(self: object, vertex: object) -> None:
+        '''add vertex'''
+        (self.vertices).add(vertex)
+        self.vertices_dict = self.dict_of_vertices()
+        
     def add_edge(self: object, edge: list) -> None:
         '''add edge'''
         if set(edge) != set():
@@ -34,11 +39,6 @@ class Create(object):
                 (self.vertices).add(vertex)
             self.vertices_dict = self.dict_of_vertices()
             self.edges_dict = self.dict_of_edges()
-    
-    def add_vertex(self: object, vertex: object) -> None:
-        '''add vertex'''
-        (self.vertices).add(vertex)
-        self.vertices_dict = self.dict_of_vertices()
             
     def dict_of_vertices(self: object) -> dict:
         '''return list of vertices in term of Python dictionary'''
@@ -54,18 +54,6 @@ class Create(object):
         values = self.edges
         edges_dict = {k: v for k, v in zip(keys, values)}
         return edges_dict
-        
-    def incidence_matrix(self: object) -> np.matrix:
-        '''return incidence matrix of graph'''
-        vertices_dict = self.vertices_dict
-        edges_dict =  self.edges_dict
-        inci_matrix = np.zeros((len(vertices_dict), len(edges_dict)))
-        for i in range(len(vertices_dict)):
-            for j in range(len(edges_dict)):
-                if vertices_dict[i] in edges_dict[j]:
-                    inci_matrix[i][j] = 1
-        self.inci_matrix = np.matrix(inci_matrix)
-        return self.inci_matrix
 
     def degree_vertex(self: object, vertex: object) -> float:
         '''return degree of vertex'''
@@ -111,6 +99,18 @@ class Create(object):
         '''remove edge from graph'''
         (self.edges).remove(frozenset(edge))
         self.edges_dict = self.dict_of_edges()
+        
+    def incidence_matrix(self: object) -> np.matrix:
+        '''return incidence matrix of graph'''
+        vertices_dict = self.vertices_dict
+        edges_dict =  self.edges_dict
+        inci_matrix = np.zeros((len(vertices_dict), len(edges_dict)))
+        for i in range(len(vertices_dict)):
+            for j in range(len(edges_dict)):
+                if vertices_dict[i] in edges_dict[j]:
+                    inci_matrix[i][j] = 1
+        self.inci_matrix = np.matrix(inci_matrix)
+        return self.inci_matrix
         
 class Create_Normal(object):
  
