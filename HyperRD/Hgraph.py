@@ -120,6 +120,11 @@ class Create_Normal(object):
         # represent graph as adjacency list
         self.vertices = vertices
         self.adj = [[] for i in range(vertices)]
+        
+    def addEdge(self: object, start: int, end: int) -> None:
+        '''add edge'''
+        self.adj[start].append(end)
+        self.adj[end].append(start)
  
     def DFS_Utility(self: object, temp: list, vertex: int, visited: list) -> list:
         '''Depth-first search algorithm'''
@@ -137,11 +142,6 @@ class Create_Normal(object):
                 # Update the list
                 temp = self.DFS_Utility(temp, i, visited)
         return temp
-
-    def addEdge(self: object, start: int, end: int) -> None:
-        '''add edge'''
-        self.adj[start].append(end)
-        self.adj[end].append(start)
  
     # Method to retrieve connected components
     # in an undirected graph
