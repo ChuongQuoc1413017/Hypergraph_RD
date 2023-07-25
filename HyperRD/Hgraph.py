@@ -121,12 +121,12 @@ class Create_Normal(object):
         self.vertices = vertices
         self.adj = [[] for i in range(vertices)]
         
-    def addEdge(self: object, start: int, end: int) -> None:
+    def add_edge(self: object, start: int, end: int) -> None:
         '''add edge'''
         self.adj[start].append(end)
         self.adj[end].append(start)
  
-    def DFS_Utility(self: object, temp: list, vertex: int, visited: list) -> list:
+    def dfs_utility(self: object, temp: list, vertex: int, visited: list) -> list:
         '''Depth-first search algorithm'''
         # Mark the current vertex as visited
         visited[vertex] = True
@@ -140,7 +140,7 @@ class Create_Normal(object):
             if visited[i] == False:
  
                 # Update the list
-                temp = self.DFS_Utility(temp, i, visited)
+                temp = self.dfs_utility(temp, i, visited)
         return temp
  
     # Method to retrieve connected components
@@ -154,5 +154,5 @@ class Create_Normal(object):
         for vertex in range(self.vertices):
             if visited[vertex] == False:
                 temp = []
-                components.append(self.DFS_Utility(temp, vertex, visited))
+                components.append(self.dfs_utility(temp, vertex, visited))
         return components

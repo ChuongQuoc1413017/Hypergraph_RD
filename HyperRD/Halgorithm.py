@@ -5,6 +5,8 @@ Created on Mon Jul 17 19:50:30 2023
 @author: ASUS
 """
 
+from HyperRD.Hgraph import *
+
 def vertex_connected(graph: object, start: object, end: object) -> bool:
     '''check whether two vertices are connected'''
     keys = list(graph.vertices)
@@ -50,3 +52,27 @@ def graph_connected(graph: object) -> bool:
                 if not vertex_connected(graph, u, v):
                     return False
     return True
+
+def components_connected(graph: object) -> list:
+    '''return list of connected components'''
+    vertices = graph.vertices_dict
+    edges = graph.edges_dict
+    vertices_length = len(vertices)
+    edges_length = len(edges)
+    normal_graph = Create_Normal(vertices_length + edges_length)
+    
+    for vertex in range(vertices_length):
+        for edge in range(edges_length):
+            if vertices[vertex] in edges[edge]:
+                normal_graph.add_edge(vertex, edge + vertices_length)
+            
+    cc = normal_graph.connected_components()
+    components = []
+    for cluster in cc:
+        component = []
+        for i in cluster:
+            if i < vertices_length:
+                component.append(vertices[i])
+        components.append(component)
+        
+    return components
