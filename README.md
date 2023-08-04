@@ -5,7 +5,7 @@ Python package for Random and Dynamical Hypergraph Computation
 `random`, `itertools`, `numpy`, `networkx` (in the future)
 
 ## Structure
-- `Hgraph`: store all `class` objects
+- `HyperRD.Hgraph`: store all `class` objects
   - `Hgraph.Create`: undirected hypergraph object, including the following features and methods:
     - Features:
         - `vertices`: python set of vertices
@@ -36,7 +36,7 @@ Python package for Random and Dynamical Hypergraph Computation
         - `dfs_utility()`: depth-first search algorithm to traverse the graph
         - `connected_components()`: return a list of connected components
 ## Analyze tools
-- `Hgraph.algorithm`: tools to analyze hypergraphs
+- `HyperRD.Halgorithm`: tools to analyze hypergraphs
   - `vertex_connected()`: check if two vertices are connected
   - `graph_connected()`: check if a hypergraph is fully connected
   - `components_connected()`: return a list of connected components in the hypergraph
@@ -45,7 +45,7 @@ Python package for Random and Dynamical Hypergraph Computation
     - `mode == 'star'`: star expansion
     - `mode == 'line'`: line expansion **(still developed)**
 ## Random hypergraph generator
-- `Hgraph.random`: generate random hypergraphs
+- `HyperRD.Hrandom`: generate random hypergraphs
   - `simple_matrix()`: each element of an incidence matrix will be set value *1* randomly with probability *p* **(uniform distribution)**
   - `simple_bipartite()`: create a random hypergraph with probability *p*, based on this paper [arXiv:2210.12698v3](https://arxiv.org/abs/2210.12698) **(uniform distribution)**
   - `k_uniform()`: create a k-uniform hypergraph with probability *p*, based on this paper [arXiv:1501.07835v1](https://arxiv.org/abs/1501.07835) **(uniform distribution)**
