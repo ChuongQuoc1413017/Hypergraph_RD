@@ -20,8 +20,8 @@ Python package for Random and Dynamical Hypergraph Computation
         - `add_edge()`: add a hyperedge
         - `dict_of_vertices()`: return vertices in terms of an encoded dictionary
         - `dict_of_edges()`: return hyperedges in terms of an encoded dictionary
-        - `degree_vertex()`: return degree of a vertex
-        - `degree_edge()`: return degree of a hyperedge
+        - `degree_vertex()`: return a degree of a vertex
+        - `degree_edge()`: return a degree of a hyperedge
         - `diag_vertex()`: return a numpy diagonal matrix of vertex degrees
         - `diag_edge()`: return a numpy diagonal matrix of hyperedge degrees
         - `remove_vertex()`: remove a vertex
@@ -34,4 +34,13 @@ Python package for Random and Dynamical Hypergraph Computation
     - Methods:
         - `add_edge()`: add edge
         - `dfs_utility()`: depth-first search algorithm to traverse the graph
-        - `connected_components()`: return list of connected components
+        - `connected_components()`: return a list of connected components
+## Analyze tools
+- `Hgraph.algorithm`: tools to analyze hypergraphs
+  - `vertex_connected()`: check if two vertices are connected
+  - `graph_connected()`: check if a hypergraph is fully connected
+  - `components_connected()`: return a list of connected components in the hypergraph
+  - `graph_expansion()`: expand a hypergraph to a normal graph (based on chapter 2 of this book [Hypergraph Computation](https://link.springer.com/book/10.1007/978-981-99-0185-2)
+    - `mode == clique`: clique expansion
+    - `mode == star`: star expansion
+    - `mode == line`: line expansion **(still developed)**
