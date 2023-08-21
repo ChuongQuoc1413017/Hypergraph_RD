@@ -111,6 +111,12 @@ class Create(object):
                     inci_matrix[i][j] = 1
         self.inci_matrix = np.matrix(inci_matrix)
         return self.inci_matrix
+    
+    def copy(self: object) -> object:
+        '''return a copy version of graph)'''
+        return Create(self.vertices, self.vertices_dict, self.vertices_weight,
+                      self.edges, self.edges_dict, self.edges_weight,
+                      self.inci_matrix)
         
 class Create_Normal(object):
  
@@ -156,3 +162,7 @@ class Create_Normal(object):
                 temp = []
                 components.append(self.dfs_utility(temp, vertex, visited))
         return components
+    
+    def copy(self: object) -> object:
+        '''return a copy version of graph'''
+        return Create_Normal(self.vertices, self.adj)
