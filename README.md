@@ -27,6 +27,7 @@ Python package for Random and Dynamical Hypergraph Computation
         - `remove_vertex()`: remove a vertex
         - `remove_edge()`: remove a hyperedge
         - `incidence_matrix()`: calculate an incidence matrix and store this matrix in `inci_matrix`
+        - `copy()`: make a copy of graph
   - `Hgraph.Create_Normal`: undirected normal graph object, including the following features and methods:
     - Features:
         - `vertices`: number of vertices
@@ -35,6 +36,7 @@ Python package for Random and Dynamical Hypergraph Computation
         - `add_edge()`: add edge
         - `dfs_utility()`: depth-first search algorithm to traverse the graph
         - `connected_components()`: return a list of connected components
+        - `copy()`: make a copy of graph
 ## Analyze tools
 - `HyperRD.Halgorithm`: tools to analyze hypergraphs
   - `vertex_connected()`: check if two vertices are connected
