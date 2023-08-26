@@ -2,8 +2,8 @@
 Python package for Random and Dynamical Hypergraph Computation
 
 ## Library Requirement
-- mandatory: random`, `itertools`, `numpy`
-- optional: `networkx`, 'hypernetx'
+- mandatory: `random`, `itertools`, `numpy`
+- optional: `networkx`, `hypernetx`
 
 ## Structure
 - `HyperRD.Hgraph`: store all `class` objects
