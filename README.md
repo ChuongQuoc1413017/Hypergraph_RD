@@ -45,7 +45,7 @@ Python package for Random and Dynamical Hypergraph Computation
   - `components_connected()`: return a list of connected components in the hypergraph
   - `graph_expansion()`: expand a hypergraph to a normal graph, based on *chapter 2* of this book [Hypergraph Computation](https://link.springer.com/book/10.1007/978-981-99-0185-2)
     - `mode == 'clique'`: clique expansion
-    - `mode == 'star'`: star expansion
+    - `mode == 'star'`: star expansion or birpartite equivalence
     - `mode == 'line'`: line expansion **(still developed)**
 ## Random hypergraph generator
 - `HyperRD.Hrandom`: generate random hypergraphs
