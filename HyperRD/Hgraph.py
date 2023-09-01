@@ -166,3 +166,26 @@ class Create_Normal(object):
     def copy(self: object) -> object:
         '''return a copy version of graph'''
         return Create_Normal(self.vertices, self.adj)
+    
+class Multilayer(object):
+    
+    # init function to declare class variables
+    def __init__(self):
+        
+        # For vertices
+        self.layers = []
+
+        # For edges
+        self.interlink = set()
+
+    def add_graph(self: object, graph: object) -> None:
+        '''add graph'''
+        self.layers.append(graph)
+        
+    def add_interlink(self: object, index_start: int, inter_edge: list) -> None:
+        '''add interlink'''
+        self.interlink.add(inter_edge)
+        
+    def number_of_layers(self: object) -> int:
+        '''return number of layers'''
+        return len(self.layers)
