@@ -48,7 +48,7 @@ def simple_bipartite(n: int, m: int, interation: int, p: float) -> object:
     return graph
 
 def simple_powersets(n: int, p: float) -> object:
-    '''return a random hypergraph based on the generation of powerset'''
+    '''return a random hypergraph based on the generation of power set'''
     def powerset(iterable):
         "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
         s = list(iterable)
