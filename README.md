@@ -59,6 +59,7 @@ Python package for Random and Dynamical Hypergraph Computation
 - `HyperRD.Hrandom`: generate random hypergraphs
   - `simple_matrix()`: each element of an incidence matrix will be set value *1* randomly with probability *p* **(uniform distribution)**
   - `simple_bipartite()`: create a random hypergraph with probability *p*, based on this paper [arXiv:2210.12698v3](https://arxiv.org/abs/2210.12698) **(uniform distribution)**
+  - `simple_powersets()`: create a random hypergraph with probability *p*, based on the random choice of all possible edges (power set of set of vertices) **(uniform distribution)**
   - `k_uniform()`: create a k-uniform hypergraph with probability *p*, based on this paper [arXiv:1501.07835v1](https://arxiv.org/abs/1501.07835) **(uniform distribution)**
 ## Switch to another platforms
 - `HyperRD.Htranslate`: change to other platforms (check the optional section of library requirement)
