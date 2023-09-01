@@ -38,6 +38,14 @@ Python package for Random and Dynamical Hypergraph Computation
         - `dfs_utility()`: depth-first search algorithm to traverse the graph
         - `connected_components()`: return a list of connected components
         - `copy()`: make a copy of graph
+  - `Hgraph.Multilayer`: multilayer hypergraph object, including the following features and methods:
+    - Features:
+      - `layers`: list of hypergraphs
+      - `interlink`: set of interlinking hyperedge
+    - Methods:
+      - `add_graph()`: add layer
+      - `add_interlink()`: add interlinking hyperedge
+      - `number_of_layer`: return number of layers
 ## Analyze tools
 - `HyperRD.Halgorithm`: tools to analyze hypergraphs
   - `vertex_connected()`: check if two vertices are connected
