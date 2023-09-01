@@ -172,7 +172,7 @@ class Multilayer(object):
     # init function to declare class variables
     def __init__(self):
         
-        # For vertices
+        # For layer
         self.layers = []
 
         # For edges
