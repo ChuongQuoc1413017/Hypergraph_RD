@@ -78,6 +78,16 @@ def components_connected(graph: object) -> list:
         
     return components
 
+def simple_reduction(graph):
+    '''reduce hypergraph to simple hypergraph'''
+    graph_new = graph.copy()
+    edge_list = list(graph.edges)
+    for i in range(len(edge_list)):
+        for j in range(len(edge_list)):
+            if i != j and edge_list[j].issubset(edge_list[i]):
+                graph_new.remove_edge(edge_list[j])
+    return graph_new
+
 def graph_expansion(graph: object, mode: str) -> object:
     '''expand hypergraph to normal graph'''
     vertices = graph.vertices_dict

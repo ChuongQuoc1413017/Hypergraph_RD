@@ -114,9 +114,16 @@ class Create(object):
     
     def copy(self: object) -> object:
         '''return a copy version of graph)'''
-        return Create(self.vertices, self.vertices_dict, self.vertices_weight,
-                      self.edges, self.edges_dict, self.edges_weight,
-                      self.inci_matrix)
+        graph_copy = Create()
+        graph_copy.vertices= self.vertices.copy()
+        graph_copy.vertices_dict = self.vertices_dict.copy()
+        graph_copy.vertices_weight = self.vertices_weight.copy()
+        graph_copy.edges = self.edges.copy()
+        graph_copy.edges_dict = self.edges_dict.copy()
+        graph_copy.edges_weight = self.edges_weight.copy()
+        if self.inci_matrix != None:
+            graph_copy.inci_matrix = self.inci_matrix.copy()
+        return graph_copy
         
 class Create_Normal(object):
  
@@ -165,7 +172,10 @@ class Create_Normal(object):
     
     def copy(self: object) -> object:
         '''return a copy version of graph'''
-        return Create_Normal(self.vertices, self.adj)
+        graph_copy = Create_Normal()
+        graph_copy.vertices = self.vertices.copy()
+        graph_copy.adj = self.adj.copy()
+        return graph_copy
     
 class Multilayer(object):
     
