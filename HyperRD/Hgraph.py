@@ -23,7 +23,7 @@ class Create(object):
         self.edges_weight = []
         
         # For representation
-        self.inci_matrix = None
+        self.inci_matrix = []
         
     def add_vertex(self: object, vertex: object) -> None:
         '''add vertex'''
