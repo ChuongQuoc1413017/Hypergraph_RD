@@ -60,9 +60,12 @@ Python package for Random and Dynamical Hypergraph Computation
 - `HyperRD.Hrandom`: generate random hypergraphs
   - `simple_matrix()`: each element of an incidence matrix will be set value *1* randomly with probability *p* **(uniform distribution)**
   - `simple_bipartite()`: create a random hypergraph with probability *p*, based on this paper **(uniform distribution)**
-  - `simple_powersets()`: create a random hypergraph with probability *p*, based on the random choice of all possible edges (power set of set of vertices) **(uniform distribution)**
+  - `simple_powersets()`: create a random hypergraph with probability *p*, based on the random choice of all possible edges (power set of vertices) **(uniform distribution)**
   - `k_uniform()`: create a k-uniform hypergraph with probability *p*, based on this paper **(uniform distribution)**
-## Switch to another platforms
+## Stochastic processes on hypergraph
+- `HyperRD.Hdynamic`: analyze stochastic processes on hypergraph
+  - `transit_prob_matrix()`: return a uniform transition probability matrix of hypergraph
+## Switch to other platforms
 - `HyperRD.Htranslate`: change to other platforms (check the optional section of library requirement)
   - `hyperrd_to_networkx()`: switch from `Hgraph.Create_Normal` object to [`NetworkX`](https://networkx.org/documentation/stable/index.html) object
   - `hyperrd_to_hypernetx()`: switch from `Hgraph.Create` object to [`HyperNetX`](https://pnnl.github.io/HyperNetX) object
