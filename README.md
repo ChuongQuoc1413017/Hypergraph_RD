@@ -64,7 +64,7 @@ Python package for Random and Dynamical Hypergraph Computation
   - `k_uniform()`: create a k-uniform hypergraph with probability *p*, based on this paper **(uniform distribution)**
 ## Stochastic processes on hypergraph
 - `HyperRD.Hdynamic`: analyze stochastic processes on hypergraph
-  - `transit_prob_matrix()`: return a uniform transition probability matrix of hypergraph
+  - `transit_prob_matrix()`: return a uniform transition probability matrix of hypergraph (simple random walk)
 ## Switch to other platforms
 - `HyperRD.Htranslate`: change to other platforms (check the optional section of library requirement)
   - `hyperrd_to_networkx()`: switch from `Hgraph.Create_Normal` object to [`NetworkX`](https://networkx.org/documentation/stable/index.html) object
