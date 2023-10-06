@@ -29,10 +29,10 @@ def simple_matrix(n: int, m: int, p: float) -> object:
     graph.inci_matrix = graph.incidence_matrix()
     return graph
 
-def simple_bipartite(n: int, m: int, interation: int, p: float) -> object:
+def simple_bipartite(n: int, m: int, iteration: int, p: float) -> object:
     '''return a random hypergraph based on the generation of bipartite graph'''
     edges = [set()]*m
-    for k in range(interation):
+    for k in range(iteration):
         edge_index = random.choice(range(m))
         edge = edges[edge_index].copy()
         for i in range(n):
