@@ -81,3 +81,23 @@ def k_uniform(n: int, k: int, p: float) -> object:
         graph.add_edge(edge)
     graph.inci_matrix = graph.incidence_matrix()
     return graph
+
+def simple_order(n: int, d:int, p: float) -> object:
+    '''return a random hypergraph based on the generation of power set with order less than d'''
+    def powerset(iterable):
+        "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
+        s = list(iterable)
+        return itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(2, d+1))
+    
+    edges = []
+    edges_possible = list(powerset(list(range(n))))
+    for edge in edges_possible:
+        if np.random.randint(1000, size=1)/1000 < p:
+            edges.append(edge)
+    graph = Create()
+    graph.vertices = set(range(n))
+    graph.vertices_dict = graph.dict_of_vertices()
+    for edge in edges:
+        graph.add_edge(edge)
+    graph.inci_matrix = graph.incidence_matrix()
+    return graph

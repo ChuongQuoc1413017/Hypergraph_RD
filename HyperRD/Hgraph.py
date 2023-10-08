@@ -121,8 +121,7 @@ class Create(object):
         graph_copy.edges = self.edges.copy()
         graph_copy.edges_dict = self.edges_dict.copy()
         graph_copy.edges_weight = self.edges_weight.copy()
-        if self.inci_matrix != None:
-            graph_copy.inci_matrix = self.inci_matrix.copy()
+        graph_copy.inci_matrix = self.incidence_matrix()
         return graph_copy
         
 class Create_Normal(object):
