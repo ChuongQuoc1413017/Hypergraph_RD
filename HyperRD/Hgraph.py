@@ -176,6 +176,20 @@ class Create_Normal(object):
         graph_copy.adj = self.adj.copy()
         return graph_copy
     
+class Create_Direct(Create):
+    
+    def __init__(self):
+        super().__init__()
+        self.edges_direct = set()
+        
+    def add_edge_direct(self, start, end):
+        '''add directed edge'''
+        if set(start) != set() and set(start) != set():
+            direct_edge = [frozenset(start), frozenset(end)]
+            (self.edges_direct).add(tuple(direct_edge))
+        self.add_edge(start)
+        self.add_edge(end)
+    
 class Multilayer(object):
     
     # init function to declare class variables
