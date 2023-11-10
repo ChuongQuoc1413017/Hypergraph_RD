@@ -40,7 +40,7 @@ Python package for Random and Dynamical Hypergraph Computation
         - `copy()`: make a copy of graph
   - `Hgraph.Create_Direct`: directed hypergraph object (inherit class of Create), including the following features and methods:
     - Features:
-        - `edges_direct`: set of directed hyperedges, in form `[start, end]`, where `[start]` and `[end]` are subset of vertex set 
+        - `edges_direct`: set of directed hyperedges, in form `[start, end]`, where `start` and `end` are subset of vertex set 
     - Methods:
         - `add_edge_direct()`: add a directed hyperedge
   - `Hgraph.Multilayer`: multilayer hypergraph object, including the following features and methods:
