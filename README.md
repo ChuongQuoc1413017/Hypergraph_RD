@@ -61,6 +61,11 @@ Python package for Random and Dynamical Hypergraph Computation
     - `mode == 'clique'`: clique expansion
     - `mode == 'star'`: star expansion or birpartite equivalence
     - `mode == 'line'`: line expansion **(still developed)**
+- `HyperRD.Hmetric`: metrics on hypergraphs
+  - `density()`: return the density of hypergraph
+  - `girth()`: return the size of the smallest non-empty hyperedge in the hypergraph
+  - `average_vertex_degree()`: return the average degree across all vertices in the hypergraph
+  - `average_edge_size()`: return the average size across all edges in the hypergraph
 ## Random hypergraph generator
 - `HyperRD.Hrandom`: generate random hypergraphs
   - `simple_matrix()`: each element of an incidence matrix will be set value *1* randomly with probability *p* **(uniform distribution)**
