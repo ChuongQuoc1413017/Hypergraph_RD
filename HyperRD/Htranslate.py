@@ -7,6 +7,7 @@ Created on Sat Jul 22 08:45:26 2023
 
 import networkx as nx
 import hypernetx as hnx
+import xgi
 
 def hyperrd_to_networkx(graph: object) -> object:
     G = nx.Graph()
@@ -21,3 +22,7 @@ def hyperrd_to_networkx(graph: object) -> object:
 def hyperrd_to_hypernetx(graph: object) -> object:
     G = hnx.Hypergraph(graph.edges_dict)
     return G
+
+def hyperrd_to_xgi(graph: object) -> object:
+    edges_list = [list(edge) for edge in graph.edges]
+    return xgi.Hypergraph(edges_list)
