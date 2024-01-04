@@ -80,3 +80,4 @@ Python package for Random and Dynamical Hypergraph Computation
 - `HyperRD.Htranslate`: change to other platforms (check the optional section of library requirement)
   - `hyperrd_to_networkx()`: switch from `Hgraph.Create_Normal` object to [`NetworkX`](https://networkx.org/documentation/stable/index.html) object
   - `hyperrd_to_hypernetx()`: switch from `Hgraph.Create` object to [`HyperNetX`](https://pnnl.github.io/HyperNetX) object
+  - `hyperrd_to_xgi()`: switch from `Hgraph.Create` object to [`XGI`](https://xgi.readthedocs.io/en/stable/) object
