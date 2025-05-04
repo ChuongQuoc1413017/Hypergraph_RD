@@ -1,5 +1,5 @@
 ---
-title: 'Gala: A Python package for galactic dynamics'
+title: 'HyperRD: Toward a Comprehensive Simulation Framework for Hypergraphs'
 tags:
   - python
   - hypergraph
