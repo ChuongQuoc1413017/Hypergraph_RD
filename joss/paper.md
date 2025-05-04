@@ -15,7 +15,7 @@ authors:
 affiliations:
  - name: Department of Mathematics, University at Buffalo, New York, NY 14260, United States
    index: 1
- - name: epartment of Applied Physics, Stanford University, Stanford, CA 94305, United States
+ - name: Department of Applied Physics, Stanford University, Stanford, CA 94305, United States
    index: 2
 date: 03 May 2025
 bibliography: paper.bib
